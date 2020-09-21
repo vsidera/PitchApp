@@ -1,8 +1,8 @@
 from flask import render_template, url_for, flash, redirect
 from pitch import app
 from pitch.forms import RegistrationForm, LoginForm
-from pitch.models import User, Post
-posts = [
+from pitch.models import User, Pitch
+pitches = [
     {
         'author': 'Corey Schafer',
         'title': 'Blog Post 1',
