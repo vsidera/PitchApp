@@ -1,10 +1,11 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError, Required
 from pitch.models import User
 
+CATEGORY_CHOICES=[('Product pitch','Product pitch'), ('Pickup lines','Pickup lines'), ('Sales pitch','Sales pitch'),('vote of thanks','vote of thanks')]
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
@@ -57,6 +58,7 @@ class UpdateAccountForm(FlaskForm):
                 raise ValidationError('That email is taken. Please choose a different one.')    
 
 class PitchForm(FlaskForm):
+    pitch_category = SelectField('Choose a category', choices=CATEGORY_CHOICES, validators=[Required()])
     title = StringField('Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Pitch')                
