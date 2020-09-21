@@ -46,6 +46,23 @@
     </header>
     <main role="main" class="container">
       <div class="row">
+        
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3>Categories</h3>
+            <p><i>Welcome, feel free to pitch under any of these subjects</i> 
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-dark">Pick up lines</li>
+                <li class="list-group-item list-group-item-light">Interview pitch</li>
+                <li class="list-group-item list-group-item-dark">Product pitch</li>
+                <li class="list-group-item list-group-item-light">Promotion pitch</li>
+                <li class="list-group-item list-group-item-dark">Sales pitch</li>
+                <li class="list-group-item list-group-item-light">Introductory pitch</li>
+                <li class="list-group-item list-group-item-dark">Vote of Thanks</li>
+              </ul>
+            </p>
+          </div>
+        </div>
         <div class="col-md-8">
           {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
@@ -57,19 +74,6 @@
             {% endif %}
           {% endwith %}
           {% block content %}{% endblock %}
-        </div>
-        <div class="col-md-4">
-          <div class="content-section">
-            <h3>Categories</h3>
-            <p class='text-muted'>Hi user, feel free to pitch under any of these subjects
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Pick up lines</li>
-                <li class="list-group-item list-group-item-light">Interview pitch</li>
-                <li class="list-group-item list-group-item-light">Product pitch</li>
-                <li class="list-group-item list-group-item-light">Promotion pitch</li>
-              </ul>
-            </p>
-          </div>
         </div>
       </div>
     </main>
