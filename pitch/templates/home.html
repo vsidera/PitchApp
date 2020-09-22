@@ -8,8 +8,10 @@
               <a class="mr-2" href="#">{{ post.author.username }}</a>
               <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
-            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <h3><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h3>
             <p class="article-content">{{ post.content }}</p>
+            <h6>category:{{ post.pitch_category }}product pitch</h6>
+            <!-- <h5>category : {{ post.pitch_category }}</h5> -->
           </div>
         </article>
     {% endfor %}
